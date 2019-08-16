@@ -8,5 +8,5 @@ script:
  - pycodestyle --count url-to-json/url-to-json.py
  - pycodestyle --count json-to-xml/json-to-xml.py
  - python3 url-to-json/url-to-json.py https://docs.python.org/3/ "(\w{1,7})"
- - python3 json-to-xml/json-to-xml.py ../dict2.json ../New_max4.xml -id mx4 
+ - python3 json-to-xml/json-to-xml.py dict2.json New_max4.xml -id mx4 
 if: branch = master

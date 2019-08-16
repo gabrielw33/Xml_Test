@@ -3,7 +3,7 @@ regexp.txt
 json-to-xml/*.xml
 json-to-xml/*.json
 venv
-*.xml
+max4.xml
 *.json
 .vscode
 regexp.txt

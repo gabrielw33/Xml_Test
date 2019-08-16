@@ -2,6 +2,7 @@ language: python
 python:
  - "3.6"
 install:
+ - pip install requests
  - pip install pycodestyle
 script:
  - pycodestyle --count url-to-json/url-to-json.py

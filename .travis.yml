@@ -1,0 +1,10 @@
+language: python
+python:
+ - "3.6"
+install:
+ - pip install pycodestyle
+script:
+ - pycodestyle --count url-to-json/url-to-json.py
+ - pycodestyle --count json-to-xml/json-to-xml.py
+ 
+

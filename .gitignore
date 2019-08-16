@@ -1,2 +1,7 @@
 url-to-json/*.json
 json-to-xml/*.xml
+*.xml
+*.json
+.vscode
+venv
+regexp.txt

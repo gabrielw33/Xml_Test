@@ -2,16 +2,23 @@ import requests
 import re
 import json
 import sys
+import argparse
+
+
+parser = argparse.ArgumentParser(description='url')
+parser.add_argument('url', type=str, help="url")
+parser.add_argument('reg', type=str, help="the regular expression must be enclosed in brackets and quotation marks") 
+args = parser.parse_args()
 
 
 if len(sys.argv) < 2 :
     print("Error : no parameter")
 else:    
-    url = sys.argv[1]
+    url = args.url
 
 responce = requests.get(url)
 dictionary = {}
-reg = r"(([A-Z]\w+\.)+((\d-\d\.)|[A-Z]\w+\.)+((\d-\d\.)|[A-Z]\w+))"
+reg = args.reg
 match = re.finditer(reg, responce.text)
 
 for matchNum, match in enumerate(match, start=1):

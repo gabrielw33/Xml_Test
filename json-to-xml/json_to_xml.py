@@ -25,7 +25,8 @@ json_file.close()
 
 for k, v in data.items():
     if v != -2:
-        element = ET.SubElement(root.find('nvm'),'param', F.DictForParamTAG(k, v))
+        element = ET.SubElement(
+            root.find('nvm'), 'param', F.DictForParamTAG(k, v))
 
 root.set('productID', str(args.id))
 tree.write('max4.xml')

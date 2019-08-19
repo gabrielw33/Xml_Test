@@ -7,3 +7,5 @@ max4.xml
 *.json
 .vscode
 regexp.txt
+.pytest_cache
+__pycache__

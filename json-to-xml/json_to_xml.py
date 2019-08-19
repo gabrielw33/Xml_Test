@@ -2,15 +2,7 @@ import xml.etree.ElementTree as ET
 import json
 import sys
 import argparse
-
-
-def DictForParamTAG(name, value):
-    """Generates dictionary
-    used as argument to the SubElement function"""
-    one_dic = {}
-    one_dic["name"] = name
-    one_dic["value"] = str(value)
-    return one_dic
+import Function as F
 
 
 parser = argparse.ArgumentParser(description='')
@@ -26,14 +18,17 @@ if len(sys.argv) < 3:
 tree = ET.parse(str(args.xml))
 root = tree.getroot()
 
+
 with open(str(args.json)) as json_file:
     data = json.load(json_file)
 json_file.close()
 
 for k, v in data.items():
-    if v != -2:
-        element = ET.SubElement(root.find('nvm'),
-                                'param', DictForParamTAG(k, v))
+        if v != -2:
+            element = ET.SubElement(root.find('nvm'),
+                                    'param', F.DictForParamTAG(k, v))
+
+        
 
 root.set('productID', str(args.id))
 
